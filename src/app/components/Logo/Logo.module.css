@@ -1,0 +1,13 @@
+.root {
+  color: rgb(var(--color-primary-rgb));
+
+  width: 159px;
+  height: 50px;
+}
+
+@media screen and (max-width: 475px) {
+  .root {
+    width: 127px;
+    height: 40px;
+  }
+}

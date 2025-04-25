@@ -1,0 +1,98 @@
+.root {
+  --pt: 40px;
+  --height: 50px;
+
+  padding-top: var(--pt);
+  width: 100%;
+  height: calc(var(--height) + var(--pt));
+
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+
+  &[data-menu-open="true"] {
+    background-color: #fff;
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.login {
+  margin-left: auto;
+  display: none;
+  align-items: center;
+  gap: 32px;
+
+  &[data-visible="true"] {
+    display: flex;
+  }
+
+  .button {
+    svg {
+      display: none;
+    }
+  }
+}
+.menuToggle {
+  display: none;
+}
+.mobileMenu {
+  position: fixed;
+  top: calc(var(--height) + var(--pt));
+  width: 100%;
+  height: calc(100dvh - var(--height) - var(--pt));
+  overflow-y: auto;
+
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s;
+
+  &[data-open="true"] {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .root {
+    --pt: 20px;
+    --height: 40px;
+  }
+  .nav {
+    display: none;
+  }
+  .login {
+    .text {
+      font-size: 0;
+    }
+
+    .button {
+      padding: 8px !important;
+      svg {
+        display: block;
+      }
+    }
+
+    .buttonText {
+      font-size: 0;
+    }
+  }
+  .menuToggle {
+    width: 24;
+    height: 24px;
+    margin-right: -16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+.title {
+  max-width: 1252px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 475px) {
+  .root {
+    gap: 32px;
+  }
+}

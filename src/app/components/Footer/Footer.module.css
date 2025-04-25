@@ -1,0 +1,52 @@
+.root {
+  margin-top: 200px;
+  padding-block: 24px;
+  background-color: #f4f4f5;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 184px 1fr 284px;
+  grid-template-rows: 50px 40px 70px;
+  grid-template-areas:
+    "logo space nav"
+    "rights space nav"
+    "policy space nav";
+  gap: 8px;
+}
+.logo {
+  grid-area: logo;
+}
+.rights {
+  grid-area: rights;
+}
+.policy {
+  grid-area: policy;
+  align-self: flex-end;
+}
+.navBlock {
+  grid-area: nav;
+  display: flex;
+  align-items: start;
+  gap: 100px;
+}
+.nav,
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+@media screen and (max-width: 475px) {
+  .root {
+    margin-top: 200px;
+  }
+  .grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    grid-template-areas: "logo" "nav" "policy" "rights";
+  }
+  .rights {
+    margin-top: -36px;
+  }
+}

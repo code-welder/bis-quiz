@@ -1,0 +1,26 @@
+.root {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-sm);
+
+  &[data-variant="primary"] {
+    --bg-color: rgb(var(--color-primary-rgb));
+    box-shadow: 0px 4px 30px 0px rgba(var(--color-primary-rgb), 0.35);
+    color: #fff;
+  }
+
+  &[data-size="sm"] {
+    padding: 13px 32px 15px;
+  }
+
+  &[data-size="md"] {
+    padding: 13px 36px 15px;
+  }
+
+  &[data-size="lg"] {
+    padding: 23px 78px 25px;
+  }
+
+  &[data-full-width="true"] {
+    width: 100%;
+  }
+}
